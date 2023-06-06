@@ -1,0 +1,146 @@
+.contact-form {
+	.form-group {
+		position: relative;
+		padding-top: 2rem;
+		margin-bottom: 1rem;
+		/* If there's only 1 input make it full height */
+		&:first-child:last-child {
+			height: 100%;
+			.form-control {
+				height: 100%;
+			}
+		}
+		.form-control {
+			font-size: var(--fs-300);
+		}
+		textarea {
+			resize: none;
+		}
+		.input-highlight {
+			@include pseudo;
+			width: 0;
+			height: 0.2rem;
+			background: linear-gradient(110deg, $c-ruby, $c-citrine);
+			bottom: 0;
+			@include transition(width 0.4s ease);
+		}
+		label {
+			position: absolute;
+			left: 10px;
+			top: 25px;
+			@include transition(all 0.4s ease);
+
+			@include respond(tab-port) {
+				left: 5px;
+				top: 20px;
+			}
+			@include respond(phone) {
+				left: 5px;
+				top: 22px;
+			}
+		}
+		.form-control {
+			border-radius: 0;
+			border-width: 0 0 0.2rem 0;
+			border-top-right-radius: 0.5rem;
+			&:focus,
+			&.hasValue {
+				box-shadow: none;
+				border-color: $c-lightgray;
+				~ .input-highlight {
+					width: 100%;
+				}
+				~ label {
+					@include transform(scale(0.9));
+					top: 1px;
+					left: -2px;
+					color: $c-yang;
+
+					@include respond(tab-port) {
+						left: 5px;
+						top: 20px;
+					}
+					@include respond(phone) {
+						left: 0px;
+						top: 1px;
+					}
+				}
+			}
+		}
+	}
+}
+/*
+ * STATUS MESSAGES
+ */
+.bs-callout {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	border-radius: 0.5rem;
+	animation: status 4s ease forwards;
+	padding: 0.5rem 1rem;
+
+	h4 {
+		padding-top: 0.5rem 0;
+	}
+	p {
+		padding-bottom: 0.5rem;
+	}
+}
+.bs-callout .bs-callout-info {
+	background-color: $c-overlay-8 !important;
+	animation: status 4s ease forwards;
+}
+.bs-callout .bs-callout-warning {
+	background-color: $c-overlay-6 !important;
+	color: $c-yang;
+	animation: status 4s ease forwards;
+}
+.bs-callout-info {
+	background: $c-overlay-7;
+	color: $c-yang;
+}
+.bs-callout-warning {
+	background: $c-overlay-6;
+	color: $c-yang;
+}
+#submit-done {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 0.5rem;
+	background: $c-overlay-7;
+	color: $c-yang;
+}
+/*
+ * PARSLEY VALIDATION
+ */
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+	color: $c-jade;
+	background-color: $c-jade-light;
+	border: 0.1rem solid $c-badass;
+}
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+	color: $c-garnet;
+	background-color: $c-ruby-light;
+	border: 0.1rem solid $c-ruby;
+}
+.parsley-errors-list {
+	position: absolute;
+	font-size: 1.1rem;
+	line-height: 1.1rem;
+	margin: 0.2rem 0 0.3rem;
+	padding: 0;
+	opacity: 0;
+	list-style-type: none;
+	color: $c-crimson;
+	@include transition(all 0.3s ease-in);
+}
+.parsley-errors-list.filled {
+	opacity: 1;
+}

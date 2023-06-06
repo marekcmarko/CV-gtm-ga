@@ -1,0 +1,178 @@
+/*
+ * Prefixes
+ */
+@mixin prefix($declarations, $prefixes: ()) {
+	@each $property, $value in $declarations {
+		@each $prefix in $prefixes {
+			#{'-' + $prefix + '-' + $property}: $value;
+		}
+
+		// Output standard non-prefixed declaration
+		#{$property}: $value;
+	}
+}
+//PREFIXES  TRANSITIONS & TRANSFORMS
+@mixin transition($transition...) {
+	$prefixes: ("-webkit", "-ms", "-o", "");
+	@each $prefix in $prefixes {
+		#{$prefix}-transition: $transition;
+	}
+
+	transition: $transition;
+}
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+/*
+ * Box-sizing
+ */
+@mixin box-sizing($value) {
+	-webkit-box-sizing: $value;
+	-moz-box-sizing: $value;
+	box-sizing: $value;
+}
+/*
+ * Box - nahodi width && height naraz
+ */
+@mixin box($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+/*
+ * Container
+ */
+@mixin container($width) {
+	width: 100%;
+	max-width: $width;
+	margin: 0 auto;
+}
+/*
+ * Pseudo
+ */
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+	position: $pos;
+	display: $display;
+	content: $content;
+}
+/*
+ * pushAway - Schova element
+ */
+@mixin pushAway {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+$toggler-size: 40px;
+$toggler-transition: transform 0.5s, top 0.5s;
+
+$item-count: 6;
+$item-size: $toggler-size * 2;
+$item-color: white;
+$item-transition: 0.5s;
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin absolute-center {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+
+@mixin line {
+	@include size($toggler-size, $toggler-size/8);
+	display: block;
+	z-index: 1;
+	border-radius: $toggler-size/16;
+	background: rgba($c-yang, 0.7);
+	transition: $toggler-transition;
+}
+/*
+ * absCenter -  centrovanie v ramci position
+ */
+@mixin absCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/*
+ * Vertical center -  horizontalne centrovanie v ramci position
+ */
+@mixin vertical-center {
+	position: relative;
+	top: 50%;
+	@include transform(translateY(-50%));
+}
+/*
+ * flexCenterText - centrovanie v ramci flexu
+ */
+@mixin flexCenterText {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+/*
+ * Bulletless - zrusi odrazky a odsadenie zlava
+ */
+@mixin bulletless {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+// CUSTOM MEDIA QUERY MANAGER
+/*
+0 - 480px:
+480 - 600px:    Mobil
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] zakladne styly /Desktop First/
+1800px + :      Big desktop
+
+$breakpoint moznosti argumentu:
+- tiny
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+	@if $breakpoint == tiny {
+		@media only screen and (max-width: 30em) {
+			@content;
+		} //480px
+	}
+	@if $breakpoint == phone {
+		@media only screen and (max-width: 37.5em) {
+			@content;
+		} //600px
+	}
+	@if $breakpoint == tab-port {
+		@media only screen and (max-width: 56.25em) {
+			@content;
+		} //900px
+	}
+	@if $breakpoint == tab-land {
+		@media only screen and (max-width: 75em) {
+			@content;
+		} //1200px
+	}
+	@if $breakpoint == big-desktop {
+		@media only screen and (min-width: 112.5em) {
+			@content;
+		} //1800
+	}
+}

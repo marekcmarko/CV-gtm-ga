@@ -1,0 +1,25 @@
+/***********************************************************************************
+ *	DIVIDERS
+ ***********************************************************************************/
+// Shadow separator
+.shadow-sep {
+    width: 100%;
+    margin: 4rem auto;
+    position: relative;
+	// z-index: 10;
+    z-index: z('shadow-sep');
+}
+.shadow-sep-hr {
+	background: radial-gradient(ellipse at 50% -50% , $c-lightgray-1 0px, $c-rgba-black 80%) repeat scroll 0 0 $c-rgba-white;
+}
+.sep-shadow::after, .shadow-sep.sep-shadow::after {
+    @include pseudo($pos: relative);
+    height: 5px;
+    width: 100%;
+    background: radial-gradient(ellipse at 50% -50%, $c-overlay-5 0, $c-rgba-black 75%);
+}
+// Inline vertical bar
+.inline-bar {
+	color: $c-yang;
+	margin: 0 .1rem;
+}

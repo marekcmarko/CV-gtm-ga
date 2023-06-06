@@ -1,0 +1,151 @@
+.filter {
+	margin: 5rem auto;
+	padding: 4rem 0 2.5rem 0;
+
+	&__list {
+		display: flex;
+		width: 100%;
+		padding: 0;
+		margin: 0 auto;
+		position: relative;
+		list-style: none;
+		background: linear-gradient(110deg, $c-ruby, $c-citrine);
+
+		@include respond(phone) {
+			flex-direction: column;
+			flex-wrap: wrap;
+			background: transparent;
+		}
+		@media only screen and (max-width: 26.25em) {
+		}
+	}
+	&__tab {
+		width: 25%;
+		height: 0.3rem;
+		display: flex;
+		justify-content: center;
+		color: $c-overlay;
+		@include transition(all 0.3s);
+
+		&:hover {
+			background-color: $c-yin;
+			color: $c-yin;
+			font-weight: 600;
+
+			@include respond(phone) {
+				background-color: transparent;
+				color: $c-yang;
+			}
+		}
+		&.active {
+			color: $c-yin;
+			font-weight: 600;
+
+			&:hover {
+				color: $c-yin;
+
+				@include respond(phone) {
+					color: $c-yang;
+				}
+			}
+
+			@include respond(phone) {
+				background-color: transparent;
+			}
+		}
+
+		@include respond(phone) {
+			height: auto;
+			flex-direction: column;
+			margin-bottom: 0.5rem;
+			margin-right: 0.5rem;
+			padding: 1rem;
+			width: 60%;
+			margin: 0 auto;
+		}
+	}
+	.tab-1 {
+		&.active {
+			left: 0;
+		}
+	}
+	.tab-2 {
+		&.active {
+			~ .tab-slider {
+				left: 25%;
+			}
+		}
+	}
+	.tab-3 {
+		&.active {
+			~ .tab-slider {
+				left: 50%;
+			}
+		}
+	}
+	.tab-4 {
+		&.active {
+			~ .tab-slider {
+				left: 75%;
+			}
+		}
+	}
+	.tab-slider,
+	.tab-slider:hover {
+		width: 25%;
+		margin: 0;
+		flex: 25%;
+		position: absolute;
+		left: 0%;
+		top: 0;
+		height: 100%;
+		background-color: $c-yin;
+		color: $c-yang;
+		@include transition(all 0.3s);
+	}
+	.tab-slider {
+		&:hover {
+			background-color: $c-badass;
+		}
+
+		@include respond(phone) {
+			display: none;
+		}
+	}
+	&__bttn {
+		&,
+		&:link,
+		&:visited {
+			padding: 0.75rem 2.4rem;
+			position: absolute;
+			top: -45px;
+			text-transform: uppercase;
+			white-space: pre;
+			background: none;
+			@include transition(all 0.2s ease);
+
+			@include respond(phone) {
+				position: initial;
+				top: auto;
+				background: $c-badass;
+			}
+		}
+		&:hover {
+			@include transform(translateY(-3px));
+		}
+		&:active,
+		&:focus {
+			outline: none;
+			@include transform(translateY(-1px));
+		}
+		@include respond(phone) {
+			&:hover {
+				box-shadow: 0 1rem 2rem rgba($c-yin, 0.2);
+			}
+			&:active,
+			&:focus {
+				box-shadow: 0 0.5rem 1rem rgba($c-yin, 0.2);
+			}
+		}
+	}
+}

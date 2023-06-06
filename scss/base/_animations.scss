@@ -1,0 +1,156 @@
+/***********************************************************************************
+ *  SCALING
+ ***********************************************************************************/
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		@include transform(scale3d(0.75, 0.75, 1));
+	}
+	to {
+		opacity: 1;
+		@include transform(scale3d(1, 1, 1));
+	}
+}
+/***********************************************************************************
+ *  RIPPLE
+ ***********************************************************************************/
+@keyframes ripple {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
+/***********************************************************************************
+ *  SHINE GENERAL
+ ***********************************************************************************/
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+/***********************************************************************************
+ *  TEXT GRADIENT ANIMATION
+ ***********************************************************************************/
+.textShineWhite {
+	background: transparent;
+	@include prefix(
+		(
+			background:
+				linear-gradient(
+					to right,
+					$c-yang 20%,
+					$c-badass 30%,
+					$c-badass-light 70%,
+					$c-yang 80%
+				),
+			background-clip: text,
+			text-fill-color: transparent,
+			animation: textShine 7s ease-in-out infinite,
+		),
+		webkit ms
+	);
+	background-size: 200% auto;
+}
+.textShineBlack {
+	background: transparent;
+	@include prefix(
+		(
+			background:
+				linear-gradient(
+					to right,
+					$c-yin 20%,
+					$c-badass 30%,
+					$c-badass-light 70%,
+					$c-yin 80%
+				),
+			background-clip: text,
+			text-fill-color: transparent,
+			animation: textShine 7s ease-in-out infinite,
+		),
+		webkit ms
+	);
+	background-size: 200% auto;
+}
+@keyframes textShine {
+	to {
+		background-position: 200%;
+	}
+}
+/***********************************************************************************
+ *  PROGRESS BARS
+ ***********************************************************************************/
+@keyframes loading-1 {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(180deg));
+	}
+}
+@keyframes loading-2 {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(72deg));
+	}
+}
+@keyframes loading-3 {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(36deg));
+	}
+}
+@keyframes loading-4 {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(144deg));
+	}
+}
+@keyframes loading-5 {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(108deg));
+	}
+}
+
+.scrolling {
+	@include transition(scrolling 3s 1 easeInQuint);
+}
+@keyframes scrolling {
+	0% {
+		@include transform(rotate(270deg));
+	}
+	100% {
+		@include transform(rotate(360deg));
+	}
+}
+@keyframes status {
+	0% {
+		opacity: 0.6;
+		pointer-events: all;
+	}
+	50% {
+		opacity: 0.8;
+		pointer-events: all;
+	}
+	90% {
+		opacity: 1;
+		pointer-events: all;
+	}
+	100% {
+		opacity: 0;
+		pointer-events: none;
+	}
+}

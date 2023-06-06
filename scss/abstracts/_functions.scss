@@ -1,0 +1,32 @@
+ 						/*FUNCTIONS & MIXINS*/
+
+
+/*EM*/
+
+@function em( $size, $context: 16 ) {
+	@return ( $size / $context ) + em;
+}
+
+@mixin font-size( $size, $context: 16 ) {
+	font-size: em( $size, $context );
+}
+
+// @function z($name) {
+//     @if index($z-indexes, $name) {
+//         @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+//     } @else {
+//         @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+//         @return null;
+//     }
+// }
+// $z-indexes: (
+//     "c-progress__right c-progress__left",
+//     "shadow-sep"
+//     "flex-direction-nav a",
+//     "flex-pauseplay a",
+//     "back-to-top",
+//     "sticky-top",
+//     "lb-nav",
+//     "lightbox",
+//     "lightboxOverlay"
+// );

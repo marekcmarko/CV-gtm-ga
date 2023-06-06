@@ -1,0 +1,102 @@
+/**
+ * ## Zarovnanie textu
+ */
+
+//Stred
+._tc {
+	text-align: center;
+}
+//Vlavo
+._tl {
+	text-align: left;
+}
+//Vpravo
+._tr {
+	text-align: right;
+}
+//Rovnomerne
+._tj {
+	text-align: justify;
+}
+
+/**
+ * ## Capitalize
+ */
+._tt-upp {
+	text-transform: uppercase;
+}
+._tt-low {
+	text-transform: lowercase;
+}
+/**
+ * ## Margins - top
+ */
+._mt-1 {
+	margin-top: 2rem;
+}
+._mt-2 {
+	margin-top: 5rem;
+}
+/**
+ * ## Margins - bottom
+ */
+._mb-1 {
+	margin-bottom: 2rem;
+}
+._mb-2 {
+	margin-bottom: 5rem;
+}
+/**
+ * ## Paddings -top
+ */
+._pt-1 {
+	padding-top: em(7, 14);
+}
+._pt-2 {
+	padding-top: 2rem;
+}
+._pt-3 {
+	padding-top: 3rem;
+}
+/**
+  * ## Paddings - bottom
+  */
+._pb-2 {
+	padding-bottom: 2rem;
+}
+._pb-3 {
+	padding-bottom: 3rem;
+}
+/**
+ * ## Borders
+ */
+._b {
+	border: 0.1rem solid $c-yang;
+}
+._bb {
+	border: {
+		bottom: 0.1rem solid $c-yang;
+	}
+}
+._bt {
+	border: {
+		top: 0.1rem solid $c-yang;
+	}
+}
+._bl {
+	border: {
+		left: 0.1rem solid $c-yang;
+	}
+}
+._br {
+	border: {
+		right: 0.1rem solid $c-yang;
+	}
+}
+/**
+ * ## Text block
+ */
+._text {
+	font-size: var(--fs-400);
+	padding: 0.5rem 0;
+}

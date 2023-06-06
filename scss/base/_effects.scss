@@ -1,0 +1,217 @@
+/***********************************************************************************
+ *	RIPPLE EFFECT
+ ***********************************************************************************/
+.ripple {
+	background-position: center;
+	@include transition(background 1s);
+
+	&:hover {
+		background: $c-badass-light
+			radial-gradient(circle, transparent 1%, $c-badass-light 1%) center/15000%;
+	}
+	&:active {
+		background-color: yellow;
+		background-size: 100%;
+		@include transition(background 0s);
+	}
+}
+/***********************************************************************************
+ *	3D BOX SHADOW*
+ ***********************************************************************************/
+.box-shadow-3D {
+	position: relative;
+
+	&::before,
+	&::after {
+		@include pseudo;
+		z-index: -2;
+		bottom: 15px;
+		left: 10px;
+		width: 50%;
+		top: 80%;
+		max-width: 300px;
+		background: $c-shadow;
+		box-shadow: 0 15px 10px $c-shadow;
+		@include transform(rotate(-3deg));
+	}
+	&::after {
+		@include transform(rotate(3deg));
+		right: 10px;
+		left: auto;
+	}
+}
+/***********************************************************************************
+ * BORDER EFFECT*
+ ***********************************************************************************/
+.border-effect {
+	&::after {
+		border-top: em(2, 10) solid $c-ruby;
+		border-bottom: em(2, 10) solid $c-ruby;
+		@include transform(scaleX(0));
+		@include prefix(
+			(
+				transform-origin: 0 100%,
+			),
+			webkit ms
+		);
+	}
+	&::before {
+		border-right: em(2, 10) solid $c-ruby;
+		border-left: em(2, 10) solid $c-ruby;
+		@include transform(scaleY(0));
+		@include prefix(
+			(
+				transform-origin: 100% 0,
+			),
+			webkit ms
+		);
+	}
+	&::before,
+	&::after {
+		@include pseudo;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: -2px;
+		@include transition(all 0.5s);
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		&::before {
+			@include transform(scaleY(1));
+		}
+		&::after {
+			@include transform(scaleX(1));
+		}
+	}
+}
+/***********************************************************************************
+ *	GRADIENT ICONS
+ ***********************************************************************************/
+.fa-gradient {
+	color: $c-yin;
+	@include prefix(
+		(
+			background: linear-gradient(80deg, $c-yang, $c-ruby),
+			background-clip: text,
+			text-fill-color: transparent,
+		),
+		webkit ms
+	);
+	background-clip: border-box;
+	@include transition(all 0.25s);
+
+	&:hover,
+	&:focus,
+	&:active {
+		@include prefix(
+			(
+				filter: brightness(90%) hue-rotate(29deg),
+			),
+			webkit
+		);
+	}
+}
+/***********************************************************************************
+ *	SHUTTER OUT - HORIZONTAL EFFECT
+ ***********************************************************************************/
+.shutter-out-horizontal {
+	position: relative;
+	@include prefix(
+		(
+			backface-visibility: hidden,
+		),
+		webkit
+	);
+	-moz-osx-font-smoothing: grayscale;
+	@include transform(translateZ(0));
+	@include transition(color 300ms);
+
+	&::before {
+		@include pseudo;
+		z-index: -1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: $c-badass;
+		@include transform(scaleX(0));
+		@include prefix(
+			(
+				transform-origin: 50%,
+			),
+			webkit
+		);
+		@include transition(300ms ease-out);
+	}
+
+	&:hover::before {
+		@include transform(scaleX(1));
+	}
+}
+/***********************************************************************************
+ *	EFEKT Zrezania zo strany
+ ***********************************************************************************/
+.border-topleft-bottomright {
+	position: relative;
+
+	&::before,
+	&::after {
+		@include pseudo;
+		z-index: 100;
+		width: 100%;
+		height: 100px;
+		left: 0;
+	}
+	&::before {
+		background-image: linear-gradient(183deg, white 50%, transparent 0%);
+		background-image: linear-gradient(
+			to left bottom,
+			$c-yang 48%,
+			transparent 50%
+		);
+		top: 0;
+	}
+	&::after {
+		background-image: linear-gradient(3deg, white 50%, transparent 0%);
+		background-image: linear-gradient(
+			to right top,
+			$c-yang 48%,
+			transparent 50%
+		);
+		bottom: 0;
+	}
+}
+.border-leftnarrow-rightwide {
+	position: relative;
+
+	&::before,
+	&::after {
+		@include pseudo;
+		z-index: 100;
+		width: 100%;
+		height: 100px;
+		left: 0;
+	}
+	&::before {
+		background-image: linear-gradient(177deg, white 50%, transparent 0%);
+		background-image: linear-gradient(
+			to right bottom,
+			$c-yang 48%,
+			transparent 50%
+		);
+		top: 0;
+	}
+	&::after {
+		background-image: linear-gradient(3deg, white 50%, transparent 0%);
+		background-image: linear-gradient(
+			to right top,
+			$c-yang 48%,
+			transparent 50%
+		);
+		bottom: 0;
+	}
+}

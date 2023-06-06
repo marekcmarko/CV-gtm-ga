@@ -1,0 +1,58 @@
+.heading-primary {
+	font-size: var(--fs-xl);
+	padding: 2rem 0 3rem 0;
+
+	strong {
+		color: $c-badass;
+		text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+			-1px 1px 0 #000, 1px 1px 0 #000;
+	}
+	@include media-breakpoint-down(lg) {
+		text-align: center;
+	}
+	@include respond(phone) {
+		text-align: left;
+	}
+}
+.heading-description {
+	font-size: var(--fs-l);
+	&--main,
+	&--sub {
+		display: block;
+		letter-spacing: 0.1rem;
+		color: $c-badass;
+		color: $c-yin;
+		/* 		text-shadow: 1.5px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+			-1px 1px 0 #000, 1px 1px 0 #000; */
+	}
+}
+.heading-secondary {
+	font-size: var(--fs-l);
+	padding: 2rem 0 3rem 0;
+
+	/* 	@include respond(tab-land) {
+		font-size: 3.4rem;
+	} */
+	@include media-breakpoint-down(lg) {
+		text-align: center;
+	}
+	/* 	@include respond(tab-port) {
+		font-size: 3rem;
+	}
+
+	@include respond(phone) {
+		font-size: 4.5rem;
+	} */
+}
+.heading-tertiary {
+	font-size: var(--fs-m);
+	/* font-size: 2.5rem; */
+	letter-spacing: 0.1rem;
+	// margin: 0 10.6em 1em 0;  // presunut do util margin classy alebo BS marginy a paddingy
+	padding: 1.4em 0.5em 0 0; // presunut do util margin classy alebo BS marginy a paddingy
+	color: $c-yang;
+}
+.heading-accessory {
+	font-size: 1.5rem;
+	padding: 0.5rem 0;
+}

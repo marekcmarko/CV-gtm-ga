@@ -1,0 +1,19 @@
+<svg width="151" height="131" viewBox="0 0 151 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.733 65.302l36.89-63.706 73.617-.095 36.722 63.605-36.891 63.706-73.616.095L1.733 65.302z" stroke="url(#paint0_radial)" stroke-width="3"/>
+    <path d="M1.733 65.302l36.89-63.706 73.617-.095 36.722 63.605-36.891 63.706-73.616.095L1.733 65.302z" stroke="url(#paint1_radial)" stroke-width="3"/>
+    <path d="M1.733 65.302l36.89-63.706 73.617-.095 36.722 63.605-36.891 63.706-73.616.095L1.733 65.302z" stroke="url(#paint2_radial)" stroke-width="3"/>
+    <defs>
+        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(105.2821 -64.9908 74.77572 121.1332 59.46 162.534)">
+            <stop stop-color="#FF4B00" stop-opacity=".27"/>
+            <stop offset="1" stop-color="#FF4B00" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-33.8957 185.59516 -126.05695 -23.02209 94.737 -25.206)">
+            <stop stop-color="#B5B5B5"/>
+            <stop offset="1" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="paint2_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(13.987 -120.99524 152.93355 17.67906 82.385 66.566)">
+            <stop/>
+            <stop offset="1" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+</svg>

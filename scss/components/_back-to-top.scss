@@ -1,0 +1,42 @@
+/***********************************************************************************
+ *	BACK TO TOP
+ ***********************************************************************************/
+.back-to-top {
+	&,
+	&:link,
+	&:visited {
+		display: block;
+		position: fixed;
+		bottom: 3rem;
+		right: 2rem;
+		// z-index: 100;
+		z-index: z("back-to-top");
+		border-radius: 50%;
+		color: $c-yang;
+		background: $c-badass;
+		opacity: 0.8;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $c-ruby;
+		opacity: 1;
+		@include transition(opacity 3s);
+	}
+	.bi {
+		margin: 0.6rem;
+	}
+}
+.skip-nav-link {
+	position: absolute;
+	left: 0.5rem;
+	padding: 2rem 4rem;
+	background: $c-yin;
+	color: $c-badass;
+	transform: translateY(-100%);
+	transition: transform 325ms ease-in-out;
+
+	&:focus {
+		transform: translateY(0);
+	}
+}

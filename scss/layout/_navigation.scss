@@ -1,0 +1,342 @@
+.navbar-expand-lg .navbar-collapse {
+	align-self: flex-end;
+	background: $c-badass;
+	background: $c-pale-black;
+}
+/*----------multi-level-accordian-menu------------*/
+.navbar-logo {
+	max-width: 14rem;
+	padding: 0.5rem;
+	color: $c-yang;
+	@include transition(all 300ms cubic-bezier(0.77, 0, 0.175, 1));
+
+	img {
+		@include media-breakpoint-down(md) {
+			max-width: 80%;
+			min-width: 10rem;
+		}
+	}
+}
+/* .navbar.shrink {
+	.navbar-logo {
+		padding: 0.9rem 1.5rem;
+
+		img {
+			max-height: 8.6rem;
+		}
+	}
+} */
+.navbar-mainbg {
+	height: auto;
+	padding: 0;
+	background: linear-gradient(to right bottom, $c-badass-light, $c-badass);
+	background: $c-pale-black;
+}
+.sticky-top {
+	z-index: z("sticky-top");
+}
+#navbarSupportedContent {
+	overflow: hidden;
+	position: relative;
+
+	ul {
+		padding: 0;
+		margin-right: 10rem;
+
+		@include media-breakpoint-down(lg) {
+			margin-right: 0;
+		}
+	}
+	li {
+		float: left;
+		list-style-type: none;
+	}
+	ul li a {
+		font-size: var(--fs-400);
+		padding: 2rem 2.4rem;
+		display: block;
+		position: relative;
+		color: $c-badass;
+		text-decoration: none;
+		transition-duration: 0.6s;
+		transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+		@include media-breakpoint-down(md) {
+			font-size: 2.3rem;
+		}
+	}
+	ul li a i {
+		margin-right: 1rem;
+	}
+	> ul > li.active > a {
+		color: $c-ruby;
+		font-weight: 800;
+		background-color: transparent;
+		@include transition(all 0.7s);
+	}
+	a:not(:only-child):after {
+		@include pseudo($display: inline-block, $content: "\f105");
+		right: 20px;
+		top: 10px;
+		font-size: 14px;
+		display: inline-block;
+		padding-right: 3px;
+		vertical-align: middle;
+		font-weight: 900;
+		@include transition(0.5s);
+	}
+	.active > a:not(:only-child):after {
+		@include transform(rotate(90deg));
+	}
+}
+.active-selector {
+	display: inline-block;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	left: 0;
+	transition-duration: 0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: $c-yang;
+	border-top-left-radius: 1.5rem;
+	border-top-right-radius: 1.5rem;
+	margin-top: 1rem;
+
+	.right,
+	.left {
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		background-color: $c-yin;
+		bottom: 10px;
+
+		&::before {
+			@include pseudo;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: red;
+			background: $c-pale-black;
+		}
+	}
+	.right {
+		right: -25px;
+		background: $c-yang;
+
+		&::before {
+			bottom: 0;
+			right: -25px;
+		}
+	}
+	.left {
+		left: -25px;
+		background: $c-yang;
+
+		&::before {
+			bottom: 0;
+			left: -25px;
+		}
+	}
+}
+@include media-breakpoint-down(lg) {
+	#navbarSupportedContent ul li a {
+		padding: 12px 30px;
+	}
+	.active-selector {
+		margin-top: 0;
+		margin-left: 10px;
+		border-radius: 0;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+
+		.right,
+		.left {
+			right: 10px;
+		}
+		.left {
+			top: -25px;
+			left: auto;
+
+			&:before {
+				left: -25px;
+				top: -25px;
+			}
+		}
+		.right {
+			bottom: -25px;
+
+			&:before {
+				bottom: -25px;
+				left: -25px;
+			}
+		}
+	}
+}
+@include respond(phone) {
+	.navbar {
+		justify-content: space-around;
+	}
+}
+
+.navbar-toggler {
+	outline: none !important;
+	font-size: 4.25rem;
+	margin: 3rem;
+}
+#hamburger-svg {
+	display: none;
+}
+.toggle {
+	display: block;
+	cursor: pointer;
+	input {
+		display: none;
+		+ {
+			div {
+				width: 20px;
+				height: 14px;
+				position: relative;
+				div {
+					position: absolute;
+					left: 0;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					@include transition(transform 0.5s ease);
+					span {
+						display: block;
+						position: absolute;
+						left: 0;
+						right: 0;
+						&:first-child {
+							top: 0;
+							&:before {
+								top: 0;
+							}
+							&:after {
+								top: 0;
+							}
+						}
+						&:last-child {
+							bottom: 0;
+							&:before {
+								bottom: 0;
+							}
+							&:after {
+								bottom: 0;
+							}
+						}
+						&:before {
+							@include pseudo;
+							width: 47%;
+							height: 2px;
+							border-radius: 1px;
+							background: $c-yang;
+							@include prefix(
+								(
+									backface-visibility: hidden,
+								),
+								webkit
+							);
+							@include transition(transform 0.5s ease, border-radius 0.3s ease);
+							left: 0;
+							transform-origin: 0 50%;
+							@include transform(translate(1px, 0) scaleX(1.1));
+						}
+						&:after {
+							@include pseudo;
+							width: 47%;
+							height: 2px;
+							border-radius: 1px;
+							background: $c-yang;
+							@include prefix(
+								(
+									backface-visibility: hidden,
+								),
+								webkit
+							);
+							@include transition(transform 0.5s ease, border-radius 0.3s ease);
+							right: 0;
+							transform-origin: 100% 50%;
+							@include transform(translate(-1px, 0) scaleX(1.1));
+						}
+					}
+				}
+				svg {
+					display: block;
+					fill: none;
+					stroke: $c-yang;
+					stroke-width: 2px;
+					width: 44px;
+					height: 44px;
+					stroke-linecap: round;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					margin: -22px 0 0 -22px;
+					stroke-dasharray: 0 82.801 8 82.801;
+					stroke-dashoffset: 82.801;
+					transform-origin: 50% 50%;
+					@include prefix(
+						(
+							backface-visibility: hidden,
+						),
+						webkit
+					);
+					@include transform(scale(1));
+					@include transition(
+						stroke-dashoffset 0.5s ease,
+						stroke-dasharray 0.6s ease,
+						transform 0.5s ease
+					);
+					&:nth-child(3) {
+						@include transform(rotate(180deg) scale(1));
+					}
+				}
+			}
+		}
+		&:checked {
+			+ {
+				div {
+					div {
+						@include transform(rotate(90deg));
+						span {
+							&:first-child {
+								&:before {
+									@include transform(
+										rotate(45deg) translate(2.2px, -3px) scaleX(1.05)
+									);
+								}
+								&:after {
+									@include transform(
+										rotate(-45deg) translate(-2.2px, -3px) scaleX(1.05)
+									);
+								}
+							}
+							&:last-child {
+								&:before {
+									@include transform(
+										rotate(-45deg) translate(2.2px, 3px) scaleX(1.05)
+									);
+								}
+								&:after {
+									@include transform(
+										rotate(45deg) translate(-2.2px, 3px) scaleX(1.05)
+									);
+								}
+							}
+						}
+					}
+					svg {
+						stroke-dashoffset: 62;
+						stroke-dasharray: 0 82.801 62 82.801;
+						@include transform(rotate(90deg));
+						&:nth-child(3) {
+							@include transform(rotate(270deg));
+						}
+					}
+				}
+			}
+		}
+	}
+}

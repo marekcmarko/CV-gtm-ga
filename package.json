@@ -1,0 +1,27 @@
+{
+	"name": "CV-remake",
+	"version": "1.0.0",
+	"description": "My personal page",
+	"main": "index.js",
+	"scripts": {
+		"watch:sass": "node-sass sass/main.scss css/style.css -w",
+		"devserver": "live-server",
+		"start": "npm-run-all --parallel devserver watch:sass",
+		"compile:sass": "node-sass sass/main.scss css/style.comp.css",
+		"concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+		"compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+		"build:css": "npm-run-all compile:sass concat:css prefix:css compres:css"
+	},
+	"keywords": [],
+	"author": "M.C",
+	"license": "ISC",
+	"devDependencies": {
+		"stylelint": "^13.8.0",
+		"stylelint-config-standard": "^20.0.0"
+	},
+	"dependencies": {
+		"@glidejs/glide": "^3.5.2",
+		"stylelint-scss": "^3.18.0"
+	}
+}

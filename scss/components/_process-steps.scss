@@ -1,0 +1,175 @@
+/***********************************************************************************
+ * PROCESS STEPS
+ ***********************************************************************************/
+
+/* HORIZONTAL STYLE	*/
+.process-steps {
+	position: relative;
+	margin-top: 5rem;
+
+	&::before {
+		@include pseudo;
+		top: 2.5rem;
+		right: 0;
+		left: 0;
+		margin: 0 -15rem;
+		border-top: .3rem solid $c-lightgray;
+	}
+	&::after {
+		display: table;
+		clear: both;
+		content: "";
+	}
+	.step {
+		position: relative;
+		float: left;
+		padding-right: 1.5rem;
+		margin-bottom: 5rem;
+
+		&:hover {
+			h3 {
+				&::before, &::after {
+					width: 6.5rem;
+				}
+			}
+		}
+		h3 {
+			position: relative;
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+			margin-bottom: 8rem;
+			background-color: $c-citrine;
+			color: $c-yang;
+			font-size: 2.4rem;
+			line-height: 5rem;
+			font-weight: 500;
+			text-align: center;
+
+			&::before, &::after {
+				@include pseudo;
+				top: 2.5rem;
+				width: 0;
+				height: .3rem;
+				background-color: transparent;
+				@include transition(all .25s);		
+			}
+			&::before {right: 100%;}
+			&::after {left: 100%;}
+		}
+		&:nth-child(1) {
+			h3 {
+				background-color: $c-azurite;
+			}
+			&:hover {
+				h3 {
+					&::before, &::after {
+						background-color: $c-azurite;
+					}
+				}
+			}
+		}
+		&:nth-child(2) {
+			h3 {
+				background-color: $c-amber;
+			}
+			&:hover {
+				h3 {
+					&::before, &::after {
+						background-color: $c-amber;
+					}
+				}
+			}
+		}
+		&:nth-child(3) {
+			h3 {
+				background-color: $c-citrine;
+			}
+			&:hover {
+				h3 {
+					&::before, &::after {
+						background-color: $c-citrine;
+					}
+				}
+			}
+		}
+	}
+	.step-details {
+		> *:last-child {
+			margin-bottom: 0;
+		}
+		h4 {
+			font-size: 2.2rem;
+			font-weight: 500;
+		}
+	}
+}
+.process-steps.process-6-steps {
+	.step {
+		width: 16.66667%;
+	}
+}
+.process-steps.process-5-steps {
+	.step {
+		width: 20%;
+	}
+}
+.process-steps.process-4-steps {
+	.step {
+		width: 25%;
+	}
+}
+.process-steps.process-3-steps {
+	.step {
+		width: 33.33333333%;
+	}
+}
+/* VERTICAL STYLE  */
+.process-steps.vertical-style {
+	&::before {
+		@include pseudo;
+		top: -3.2rem;
+		right: auto;
+		bottom: 0;
+		left: 2.5rem;
+		margin: 0;
+		border-top: none;
+		border-left: .3rem solid $c-lightgray;
+	}
+}
+.process-steps.vertical-style {
+	.step {
+		&:last-child {
+			margin-bottom: 0;
+		}
+		h3 {
+			float: left;
+			margin-top: .8rem;
+			margin-bottom: 0;
+
+			&::before {
+				top: auto;
+				bottom: 5.0rem;
+			}
+			&::after {
+				top: 5rem;
+			}
+			&::before, &::after {
+				@include pseudo;
+				left: 2.5rem;
+				width: .3rem;
+				height: 0;
+				background-color: transparent;
+				@include transition(all .25s);	
+			}
+		}
+		.step-details {
+			padding-left: 9rem;
+		}
+		&:hover {
+			h3::before, h3::after {
+				height: 4rem;
+			}
+		}
+	}
+}

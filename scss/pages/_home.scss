@@ -1,0 +1,225 @@
+/***********************************************************************************
+ *	GENERAL
+ ***********************************************************************************/
+.container {
+	@include container(115rem);
+	padding: 0 em(20);
+}
+.main-container {
+	@include container(124rem);
+	padding-top: 4rem;
+	padding-bottom: 11rem;
+
+	@media only screen and (max-width: 80em) {
+		padding: 8rem 6rem;
+	}
+
+	@include respond(tiny) {
+		padding: 4rem 6rem;
+	}
+}
+.nav-container {
+	@include container(160rem);
+	display: flex;
+	padding: 0 em(20);
+}
+.form-container {
+	@include container(40rem);
+	padding: 0 em(20);
+}
+/***********************************************************************************
+ *	MAIN
+ ***********************************************************************************/
+.main-content {
+	position: relative;
+	background: $c-yang;
+}
+/***********************************************************************************
+ *	ACCESSORIES
+ ***********************************************************************************/
+.glide {
+	&__text-box {
+		position: absolute;
+		top: 15vh;
+		left: 20vw;
+	}
+	&__arrow {
+		border: none !important;
+		box-shadow: none !important;
+	}
+	&__bullet {
+		margin: 0 0.5em !important;
+
+		@include respond(phone) {
+			width: 2rem !important;
+			height: 2rem !important;
+			margin: 0 1.5rem !important;
+		}
+	}
+	&.__bullet--active {
+		background-color: $c-badass !important;
+	}
+}
+.bi {
+	margin-right: 0.6rem;
+	margin-bottom: 0.3rem;
+}
+.monteweby {
+	max-width: 10rem;
+}
+#abilities {
+	padding: em(18, 36) 0 em(36, 36) 0;
+	margin-bottom: 0;
+}
+.menu {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+#languages {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@include media-breakpoint-down(sm) {
+		margin-top: 3rem;
+	}
+}
+th,
+td {
+	padding: em(13, 13) em(26, 13);
+	white-space: nowrap;
+
+	@include respond(tiny) {
+		padding: em(13, 13) 0;
+	}
+}
+.lang-table {
+	margin-top: 4rem;
+}
+/***********************************************************************************
+ *	ABOUT
+ ***********************************************************************************/
+.about {
+	position: relative;
+	background: url("../img/beach-night-sky2.webp") 0 0;
+	background: url("../img/beach-night-sky2.avif") 0 0;
+	background: url("../img/beach-night-sky2.jpg") 0 0;
+	background-position: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	min-height: 80rem;
+	padding: 2rem 4rem;
+
+	/* 	@include media-breakpoint-down(sm) {
+
+	} */
+
+	&__favorites {
+		padding-bottom: 5rem;
+		padding-top: 5rem;
+		list-style: none;
+
+		li {
+			font-size: var(--fs-400);
+			color: $c-yang;
+			padding: 0.3rem 0;
+		}
+	}
+	&__desc {
+		font-size: var(--fs-400);
+		color: $c-yang;
+	}
+	&__quotes {
+		p {
+			color: $c-yang;
+			display: inline-block;
+		}
+	}
+	&__quotes-group-1,
+	&__quotes-group-2 {
+		font-size: var(--fs-300);
+		font-family: var(--ff-quotes);
+		padding-top: 5rem;
+		padding-bottom: 3rem;
+	}
+	.wave-svg {
+		width: 100%;
+		height: auto;
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -1px;
+	}
+}
+/***********************************************************************************
+ *	GALLERY
+ ***********************************************************************************/
+.gallery {
+	&__image {
+		padding: 0;
+		overflow: hidden;
+
+		&::before {
+			@include pseudo;
+			top: 0;
+			left: -100%;
+			z-index: 2;
+			width: 50%;
+			height: 100%;
+			@include prefix(
+				(
+					background:
+						linear-gradient(to right, $c-rgba-black 0%, $c-overlay-2 100%),
+				),
+				webkit
+			);
+			@include transform(skewX(-25deg));
+		}
+		&:hover::before,
+		&:focus::before {
+			@include prefix(
+				(
+					animation: shine 0.75s,
+				),
+				webkit ms
+			);
+		}
+	}
+	img {
+		backface-visibility: hidden;
+		@include transition(all 0.8s ease-in-out);
+
+		&:hover,
+		&:focus {
+			background: $c-overlay;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			backface-visibility: hidden;
+			@include transition(all 0.8s ease-in-out);
+			@include transform(scale(1.3));
+			@include prefix(
+				(
+					filter: brightness(0.4),
+				),
+				webkit moz ms
+			);
+		}
+	}
+}
+/***********************************************************************************
+ *	LIGHTBOX OVERLAY
+ ***********************************************************************************/
+#overlay {
+	background: $c-overlay;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	text-align: center;
+}
