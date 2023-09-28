@@ -1,0 +1,86 @@
+[
+	{
+		"href": "https://monteweby.sk/",
+		"img": "img/logo-monteweby.png",
+		"alt": "logo a odkaz na web monteweby",
+		"category": "1"
+	},
+	{
+		"href": "https://bojnice.eu/",
+		"img": "img/logo-oocr.png",
+		"alt": "logo a odkaz na web oocr",
+		"category": "1"
+	},
+	{
+		"href": "https://martelbojnice.sk/",
+		"img": "img/logo-martel.png",
+		"alt": "logo a odkaz na web martel",
+		"category": "1"
+	},
+	{
+		"href": "https://kasspd.sk/",
+		"img": "img/logo-kasspd.jpg",
+		"alt": "logo a odkaz na web kasspd",
+		"category": "1"
+	},
+	{
+		"href": "https://lovekejt.eu/",
+		"img": "img/logo-love-kejt.png",
+		"alt": "logo a odkaz na e-shop lovekejt",
+		"category": "1"
+	},
+	{
+		"href": "https://www.jastcz.cz/",
+		"img": "img/jastcz-logo.png",
+		"alt": "logo a odkaz na e-shop jastcz",
+		"category": "2"
+	},
+	{
+		"href": "https://www.endorphinrepublic.cz/",
+		"img": "img/endorphin-logo.png",
+		"alt": "logo a odkaz na e-shop endorphinrepublic",
+		"category": "2"
+	},
+	{
+		"href": "https://shop.snowboardel.cz",
+		"img": "img/snowboardel-logo.png",
+		"alt": "logo a odkaz na e-shop snowboardel",
+		"category": "2"
+	},
+	{
+		"href": "https://www.electronic-star.sk/",
+		"img": "img/estar-logo.png",
+		"alt": "logo a odkaz na e-shop electronic-star",
+		"category": "3"
+	},
+	{
+		"href": "https://www.klarstein.sk/",
+		"img": "img/klarstein-logo.png",
+		"alt": "logo a odkaz na e-shop klarstein",
+		"category": "3"
+	},
+	{
+		"href": "https://www.sazimebudoucnost.cz/",
+		"img": "img/sazime-budoucnost-logo.png",
+		"alt": "logo a odkaz na web sazimebudoucnost",
+		"category": "4"
+	},
+	{
+		"href": "https://www.gopass.travel/",
+		"img": "img/gopass-logo.svg",
+		"alt": "logo a odkaz na web gopass",
+		"category": "4"
+	},
+	{
+		"href": "https://www.adapterraawards.cz/",
+		"img": "img/adapteraawards-logo.png",
+		"alt": "logo a odkaz na web adapterraawards",
+		"category": "4"
+	},
+	{
+		"href": "https://www.joynup.net/",
+		"img": "img/joynup-logo.png",
+		"alt": "logo a odkaz na web joynup",
+		"category": "4"
+	}
+]

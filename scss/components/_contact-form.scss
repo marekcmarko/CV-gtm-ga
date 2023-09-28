@@ -144,3 +144,19 @@ textarea.parsley-error {
 .parsley-errors-list.filled {
 	opacity: 1;
 }
+.g-recaptcha {
+	padding-top: 2rem;
+	transform: scale(0.77);
+	transform-origin: 0 0;
+}
+.g-recaptcha > div {
+	width: 18rem !important;
+	height: auto !important;
+}
+#g-recaptcha-response {
+	display: block !important;
+	position: absolute;
+	margin: -50px 0 0 0 !important;
+	z-index: -999999;
+	opacity: 0;
+}

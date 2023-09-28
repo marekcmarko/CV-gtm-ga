@@ -25,6 +25,21 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DTPWYKH7M0"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag () { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-DTPWYKH7M0');
+	</script>
+	<!-- reCAPTCHA -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Som HTML/CSS kóder s&nbsp;presahom do front&#8209;endových technolgií.">
@@ -40,7 +55,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="preconnect">
 	</noscript>
 	<noscript id="css-link-2">
-		<link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="preconnect">
+		<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="preconnect">
 	</noscript>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -295,8 +310,7 @@
 							<h2 class="heading-description _tt-low">
 								<span class="heading-description--main">
 									.medior { <br>
-									  &nbsp;coder; <br>
-									  &nbsp;webdesigner; <br>
+									 &nbsp;coder; <br>
 									}
 								</span>
 								<span class="heading-description--sub">
@@ -308,7 +322,7 @@
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-12 align-self-center">
-						<a class="bttn bttn-bordered parallax" href="CV_en.pdf" download="" data-rate=".04"
+						<a class="bttn bttn-bordered parallax" href="cv-en.pdf" download="" data-rate=".04"
 							data-direction="vertical"><span>Show CV</span></a>
 					</div>
 				</div>
@@ -361,24 +375,79 @@
 
 					<article id="languages" class="col-md-6 col-sm-12">
 						<h2 class="heading-secondary textShineBlack">Language skills</h2>
-						<table class="lang-table">
-							<tr class="_text">
-								<th class=""><strong>Slovak</strong> - native</th>
-								<td></td>
-							</tr>
-							<tr class="_text">
-								<th><strong>Czech</strong> - advanced</th>
-								<td><em>Level <strong>B2</strong></em></td>
-							</tr>
-							<tr class="_text">
-								<th><strong>English</strong> - advanced</th>
-								<td><em>Level <strong>B2</strong></em></td>
-							</tr>
-							<tr class="_text">
-								<th><strong>German</strong> - advanced</th>
-								<td><em>Level <strong>B2</strong></em></td>
-							</tr>
-						</table>
+						<div class="row">
+							<div class="col-md-6 col-sm-12 _tc">
+								<div class="card">
+									<svg class="svg-background" viewBox="0 0 600 600">
+										<path class="blob"
+											d="M192.1,-148.2C230,-105.8,228.6,-27,204.4,33.7C180.2,94.3,133.3,136.8,77.7,165C22.1,193.1,-42.1,206.9,-94.5,185.7C-146.9,164.5,-187.5,108.3,-201.7,46C-215.9,-16.2,-203.7,-84.5,-165.7,-127C-127.7,-169.5,-63.8,-186.3,6.6,-191.6C77.1,-196.9,154.3,-190.7,192.1,-148.2Z">
+										</path>
+									</svg>
+
+									<div class="top-section">
+										<div class="circular-border">
+											<svg>
+												<use href="icons.svg#flag-en"></use>
+											</svg>
+										</div>
+									</div>
+									<h3>English: B2</h3>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-12 _tc">
+								<div class="card">
+									<svg class="svg-background" viewBox="0 0 600 600">
+										<path class="blob"
+											d="M186.5,-139.7C230.7,-93.3,247.9,-16.4,233.4,55.7C218.9,127.7,172.6,195,112.8,217.3C52.9,239.7,-20.4,217.1,-84.7,183.3C-148.9,149.5,-204.1,104.3,-219.6,47.1C-235.2,-10.2,-211,-79.6,-167.8,-125.8C-124.6,-172,-62.3,-195,4.4,-198.5C71.1,-202.1,142.3,-186.1,186.5,-139.7Z"
+											fill="#FE840E" />
+									</svg>
+
+									<div class="top-section">
+										<div class="circular-border">
+											<svg>
+												<use href="icons.svg#flag-de"></use>
+											</svg>
+										</div>
+									</div>
+									<h3>German: A2/B1</h3>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-12 _tc">
+								<div class="card active-card">
+									<svg class="svg-background" viewBox="0 0 600 600">
+										<path class="blob"
+											d="M192.1,-148.2C230,-105.8,228.6,-27,204.4,33.7C180.2,94.3,133.3,136.8,77.7,165C22.1,193.1,-42.1,206.9,-94.5,185.7C-146.9,164.5,-187.5,108.3,-201.7,46C-215.9,-16.2,-203.7,-84.5,-165.7,-127C-127.7,-169.5,-63.8,-186.3,6.6,-191.6C77.1,-196.9,154.3,-190.7,192.1,-148.2Z">
+										</path>
+									</svg>
+
+									<div class="top-section">
+										<div class="circular-border">
+											<svg>
+												<use href="icons.svg#flag-sk"></use>
+											</svg>
+										</div>
+									</div>
+									<h3>Slovak: native..</h3>
+								</div>
+							</div>
+							<div class="col-md-6 col-sm-12 _tc">
+								<div class="card">
+									<svg class="svg-background" viewBox="0 0 600 600">
+										<path class="blob"
+											d="M194.1,-154.4C241.7,-95.1,263.7,-14.9,242.8,47C222,108.9,158.3,152.7,93.7,177.1C29.1,201.5,-36.4,206.6,-87.6,182C-138.8,157.3,-175.7,102.9,-189.7,42.9C-203.7,-17.1,-194.9,-82.8,-159.5,-139.3C-124.1,-195.9,-62,-243.5,5.6,-247.9C73.2,-252.4,146.5,-213.8,194.1,-154.4Z" />
+									</svg>
+
+									<div class="top-section">
+										<div class="circular-border">
+											<svg>
+												<use href="icons.svg#flag-cz"></use>
+											</svg>
+										</div>
+									</div>
+									<h3>Czech: B2</h3>
+								</div>
+							</div>
+						</div>
 					</article>
 				</div>
 
@@ -386,89 +455,75 @@
 					<div class="shadow-sep-hr sep-shadow"></div>
 				</div>
 
-				<section class="">
-					<h2 id="abilities" class="heading-secondary col-sm-12 textShineBlack">Web technologies</h2>
-
+				<section>
+					<h2 id="abilities" class="heading-secondary col-sm-12 textShineBlack">Tech stack</h2>
 					<div class="container _pb-3 _pt-3">
 						<div class="row">
-							<div class="c-progress-wrap01 _pt-2 _pb-2 col-md-4 col-sm-6">
-								<h3 class="heading-quaternary _tc"><strong>HTML5</strong></h3>
-								<div class="c-progress blue">
-									<span class="c-progress__left">
-										<span class="c-progress__bar"></span>
-									</span>
-									<span class="c-progress__right">
-										<span class="c-progress__bar"></span>
-									</span>
-									<div class="c-progress__value">70%</div>
-								</div>
-								<h3 class="heading-quaternary _tc">Advanced</h3>
-							</div>
-							<div class="c-progress-wrap02 _pt-2 _pb-2 col-md-4 col-sm-6">
-								<h3 class="heading-quaternary _tc"><strong>CSS3 / SCSS</strong></h4>
-									<div class="c-progress blue">
-										<span class="c-progress__left">
-											<span class="c-progress__bar"></span>
-										</span>
-										<span class="c-progress__right">
-											<span class="c-progress__bar"></span>
-										</span>
-										<div class="c-progress__value">70%</div>
+							<ul class="hex-grid hex-grid--cols-5 hex-grid--rows-3">
+								<li class="hex-grid__item hex-grid__r1-b hex-grid__c1 hexagon c-html">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="HTML skill">
+										<svg>
+											<use href="icons.svg#html"></use>
+										</svg>
 									</div>
-									<h3 class="heading-quaternary _tc">Advanced</h3>
-							</div>
-							<div class="c-progress-wrap03 _pt-2 _pb-2 col-md-4 col-sm-6">
-								<h3 class="heading-quaternary _tc"><strong>JavaScript & jQuery</strong></h3>
-								<div class="c-progress yellow">
-									<span class="c-progress__left">
-										<span class="c-progress__bar"></span>
-									</span>
-									<span class="c-progress__right">
-										<span class="c-progress__bar"></span>
-									</span>
-									<div class="c-progress__value">60%</div>
-								</div>
-								<h3 class="heading-quaternary _tc">Pre-intermediate</h3>
-							</div>
-							<div class="c-progress-wrap04 _pt-2 _pb-2 col-md-4 col-sm-6">
-								<h3 class="heading-quaternary _tc"><strong>Adobe Photoshop</strong></h3>
-								<div class="c-progress pink">
-									<span class="c-progress__left">
-										<span class="c-progress__bar"></span>
-									</span>
-									<span class="c-progress__right">
-										<span class="c-progress__bar"></span>
-									</span>
-									<div class="c-progress__value">40%</div>
-								</div>
-								<h3 class="heading-quaternary _tc">Beginner</h3>
-							</div>
-							<div class="c-progress-wrap05 _pt-2 _pb-2 col-md-4 col-sm-6">
-								<h3 class="heading-quaternary _tc"><strong>WordPress</strong></h3>
-								<div class="c-progress green">
-									<span class="c-progress__left">
-										<span class="c-progress__bar"></span>
-									</span>
-									<span class="c-progress__right">
-										<span class="c-progress__bar"></span>
-									</span>
-									<div class="c-progress__value">80%</div>
-								</div>
-								<h3 class="heading-quaternary _tc">Pre-intermediate</h3>
-							</div>
-							<div class="c-progress-wrap06 _pt-2 _pb-2 col-md-4 col-sm-6">
-								<h3 class="heading-quaternary _tc"><strong>JINJA</strong></h3>
-								<div class="c-progress pink">
-									<span class="c-progress__left">
-										<span class="c-progress__bar"></span>
-									</span>
-									<span class="c-progress__right">
-										<span class="c-progress__bar"></span>
-									</span>
-									<div class="c-progress__value">40%</div>
-								</div>
-								<h3 class="heading-quaternary _tc">Beginner</h3>
-							</div>
+								</li>
+								<li class="hex-grid__item hex-grid__r1-t hex-grid__c2 hexagon c-js">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="Javascript skill">
+										<svg>
+											<use href="icons.svg#js"></use>
+										</svg>
+									</div>
+								</li>
+								<li class="hex-grid__item hex-grid__r1-b hex-grid__c3 hexagon c-css">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="CSS skill">
+										<svg>
+											<use href="icons.svg#css"></use>
+										</svg>
+									</div>
+								</li>
+								<li class="hex-grid__item hex-grid__r1-t hex-grid__c4 hexagon c-sass">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="SASS skill">
+										<svg>
+											<use href="icons.svg#sass"></use>
+										</svg>
+									</div>
+								</li>
+								<li class="hex-grid__item hex-grid__r2-t hex-grid__c4 hexagon c-gulp">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="Gulp skill">
+										<svg>
+											<use href="icons.svg#gulp"></use>
+										</svg>
+									</div>
+								</li>
+								<li class="hex-grid__item hex-grid__r1-b hex-grid__c5 hexagon c-wp">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="Wordpress skill">
+										<svg>
+											<use href="icons.svg#wp"></use>
+										</svg>
+									</div>
+								</li>
+								<li class="hex-grid__item hex-grid__r2-t hex-grid__c2 hexagon c-bs">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="Bootstrap skill">
+										<svg>
+											<use href="icons.svg#bs"></use>
+										</svg>
+									</div>
+								</li>
+								<li class="hex-grid__item hex-grid__r2-b hex-grid__c3 hexagon c-jinja">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="Jinja skill">
+										<svg>
+											<use href="icons.svg#jinja"></use>
+										</svg>
+									</div>
+								</li>
+								<li class="hex-grid__item hex-grid__r3-t hex-grid__c2 hexagon c-git">
+									<div class="hex-grid__content hex-grid__content--interactive" aria-label="Git skill">
+										<svg>
+											<use href="icons.svg#git"></use>
+										</svg>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</section>
@@ -484,7 +539,7 @@
 						<div class="filter__list js-filter-list _tc" role="tablist">
 							<div class="filter__tab tab-1 active">
 								<button class="filter__bttn bttn bttn--animated border-effect" type="button" data-category="1"
-									role="tab">Makromont</button>
+									role="tab">Monteweby</button>
 							</div>
 							<div class="filter__tab tab-2">
 								<button class="filter__bttn bttn bttn--animated border-effect" type="button" data-category="2"
@@ -578,7 +633,7 @@
 					<article class="row about__quotes-group-2 col-lg-6 col-md-7 col-sm-6 col-xs-6">
 						<p class="col-lg-6"><em>"Knowledge is knowing what to say, wisdom is knowing whether to say it
 								or not."</em></p>
-						<p class="col-lg-6"><em>"Whether you think you can or you think can't you're right."</em></p>
+						<p class="col-lg-6"><em>"Whether you think you can or can't either way you are right."</em></p>
 						<p class="col-lg-6"><em>"Some talk to you in their free time and others free their time to talk
 								to you."</em></p>
 					</article>
@@ -779,7 +834,7 @@
 												<label for="message">Message</label>
 												<span class="input-highlight"></span>
 											</div>
-
+											<div class="g-recaptcha" data-sitekey="6LcfmOgmAAAAAAsgMvHranhWWSqg3J1MJr3mp23b"></div>
 											<div class="_tc _mt-1 _mb-1"><button type="submit"
 													class="bttn bttn-fly bttn--green bttn--animated ripple">Send</button>
 											</div>

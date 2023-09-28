@@ -1,46 +1,45 @@
 .projects {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 
-    @supports(display:grid) {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-      grid-gap: 2.5rem;
-    }
+	@supports (display: grid) {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2.5rem;
+	}
 
-    .project {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 3rem;
-        backface-visibility: hidden;
-        @include transition(all .3s);
+	.project {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem 3rem;
+		backface-visibility: hidden;
+		@include transition(all 0.3s);
 
-        &:hover {
-          @include transform(translateY(-1.5rem) scale(1.03));
-        }
+		&:hover {
+			@include transform(translateY(-1.5rem) scale(1.03));
+		}
 
+		&__img {
+			max-width: 100%;
+			height: auto;
+			animation: scaleIn 0.7s cubic-bezier(0, 1.07, 0.72, 1.42);
+			@include transition(all 0.2s);
 
-        &__img {
-          max-width: 100%;
-          height: auto;
-          animation: scaleIn .7s cubic-bezier(0, 1.07, 0.72, 1.42);
-          @include transition(all 0.2s);
+			@include respond(phone) {
+				max-width: 80%;
+			}
+			@include respond(tiny) {
+				max-width: 60%;
+			}
 
-          @include respond(phone) {
-            max-width: 80%;
-          }
-          @include respond(tiny) {
-            max-width: 60%;
-          }
-
-            img {
-              max-width: 100%;
-              height : auto;
-              vertical-align: middle;
-              max-height: 280px;
-            }
-        }
-    }
+			img {
+				max-width: 100%;
+				height: auto;
+				vertical-align: middle;
+				max-height: 280px;
+			}
+		}
+	}
 }

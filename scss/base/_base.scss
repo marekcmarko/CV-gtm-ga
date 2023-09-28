@@ -196,7 +196,7 @@ $grid-breakpoints: (
 
 :root {
 	--ff-body: "Open Sans", sans-serif;
-	--ff-quotes: "Merienda", cursive;
+	--ff-quotes: "Kalam";
 
 	--fs-xl: clamp(4.2rem, 12vw + 1rem, 5rem);
 	--fs-l: clamp(4rem, 12vw + 1rem, 4.6rem);
@@ -205,6 +205,16 @@ $grid-breakpoints: (
 	--fs-500: 1.8rem;
 	--fs-400: 1.6rem;
 	--fs-300: 1.4rem;
+
+	/*HEX- SHAPES*/
+	--hex-width: 100px;
+	--hex-between: 10px;
+
+	/* Other hexagon dimentions */
+	--hex-height: calc(var(--hex-width) / 1.73 /* sqrt(3) */);
+	--hex-margin: calc(var(--hex-width) / 2);
+	--hex-border: calc(var(--hex-margin) / 1.73 /* sqrt(3) */);
+	--hex-transition: all 0.725s ease;
 
 	@include respond(tab-land) {
 		/* font-size: 3.4rem; */

@@ -19,7 +19,7 @@
 	&:hover,
 	&:focus,
 	&:active {
-		color: $c-ruby;
+		color: $c-pale-black;
 		opacity: 1;
 		@include transition(opacity 3s);
 	}

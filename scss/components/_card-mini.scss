@@ -1,0 +1,50 @@
+.card {
+	position: relative;
+	display: inline-block;
+	// display: flex;
+	border-radius: 10px;
+	width: 250px;
+	padding: 20px;
+	overflow: hidden;
+	text-align: left;
+	cursor: pointer;
+}
+.svg-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120%;
+	height: 120%;
+	z-index: 0;
+}
+.blob {
+	transform: translate(23%, 32%) scale(0.7);
+	fill: $c-badass;
+	transition: 0.4s;
+}
+.card.active-card .blob {
+	fill: $c-badass;
+	transform: translate(23%, 3%) scale(3.75);
+}
+.card.active-card .bg-overlay {
+	opacity: 0;
+}
+.circular-border {
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	background-color: transparent;
+	position: relative;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+.card h3 {
+	position: relative;
+	opacity: 0;
+	transition: 0.4s;
+}
+.card.active-card h3 {
+	opacity: 1;
+}

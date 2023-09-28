@@ -302,9 +302,18 @@ let mainObj;
 
 		//Add navbar shrink class
 		if ($(document).scrollTop() > 1000) {
-			$(".navbar").addClass("shrink");
+			$(".navbar").addClass("navbar-shrink");
 		} else {
-			$(".navbar").removeClass("shrink");
+			$(".navbar").removeClass("navbar-shrink");
 		}
 	});
+	//Add - Remove active card class
+	function handleMouseover(e) {
+		document.querySelector(".active-card").classList.remove("active-card");
+		e.target.closest(".card").classList.add("active-card");
+	}
+
+	document
+		.querySelectorAll(".card")
+		.forEach((card) => card.addEventListener("mouseover", handleMouseover));
 })(jQuery);
