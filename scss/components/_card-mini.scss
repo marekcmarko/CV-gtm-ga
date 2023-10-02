@@ -7,6 +7,7 @@
 	padding: 20px;
 	overflow: hidden;
 	text-align: left;
+	border: 0.1rem solid #bada55;
 	cursor: pointer;
 }
 .svg-background {
@@ -20,6 +21,8 @@
 .blob {
 	transform: translate(23%, 32%) scale(0.7);
 	fill: $c-badass;
+	stroke: $c-pale-black;
+	stroke-width: 0.4rem;
 	transition: 0.4s;
 }
 .card.active-card .blob {

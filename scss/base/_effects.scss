@@ -43,48 +43,65 @@
 /***********************************************************************************
  * BORDER EFFECT*
  ***********************************************************************************/
+$border-width: 0.2rem;
+$t_dur: 0.1s;
+$a_dur: 1s;
+$border-radius: 2px; // keep below 5px
+
+// highlight styles
+
 .border-effect {
-	&::after {
-		border-top: em(2, 10) solid $c-ruby;
-		border-bottom: em(2, 10) solid $c-ruby;
-		@include transform(scaleX(0));
-		@include prefix(
-			(
-				transform-origin: 0 100%,
-			),
-			webkit ms
-		);
+	position: relative;
+	border-radius: $border-radius;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+
+	&:before,
+	&:after {
+		content: "";
+		width: 0%;
+		height: 0%;
+		position: absolute;
+		visibility: hidden;
+		border-radius: $border-radius;
 	}
-	&::before {
-		border-right: em(2, 10) solid $c-ruby;
-		border-left: em(2, 10) solid $c-ruby;
-		@include transform(scaleY(0));
-		@include prefix(
-			(
-				transform-origin: 100% 0,
-			),
-			webkit ms
-		);
-	}
-	&::before,
-	&::after {
-		@include pseudo;
-		z-index: -1;
+
+	&:before {
+		border-top: $border-width solid $c-badass;
+		border-right: $border-width solid $c-badass;
+		transition: width $t_dur ease $t_dur * 3, height $t_dur ease $t_dur * 2,
+			visibility 0s $t_dur * 4;
 		top: 0;
-		right: 0;
-		bottom: 0;
 		left: 0;
-		margin: -2px;
-		@include transition(all 0.5s);
 	}
-	&:hover,
-	&:focus,
-	&:active {
-		&::before {
-			@include transform(scaleY(1));
+
+	&:after {
+		border-left: $border-width solid $c-badass;
+		border-bottom: $border-width solid $c-badass;
+		bottom: 0;
+		right: 0;
+		transition: width $t_dur ease $t_dur, height $t_dur ease,
+			visibility 0s $t_dur * 2;
+	}
+
+	&:hover {
+		animation: pulse $a_dur ease-out $t_dur * 4;
+		color: $c-yin;
+		&:before,
+		&:after {
+			width: 100%;
+			height: 100%;
+			visibility: visible;
 		}
-		&::after {
-			@include transform(scaleX(1));
+
+		&:before {
+			transition: width $t_dur ease, height $t_dur ease $t_dur;
+		}
+
+		&:after {
+			transition: width $t_dur ease $t_dur * 2, height $t_dur ease $t_dur * 3,
+				visibility 0s $t_dur * 2;
 		}
 	}
 }

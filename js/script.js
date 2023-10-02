@@ -228,16 +228,19 @@ let mainObj;
 					origin: "left",
 				}
 			);
-			scroll.reveal(".c-progress-wrap01, .about__quotes-group-2", {
+			scroll.reveal(".c-html, .about__quotes-group-2", {
 				delay: 150,
 			});
-			scroll.reveal(".c-progress-wrap02, .about__quotes-group-1", {
+			scroll.reveal(".c-js, .about__quotes-group-1", {
 				delay: 200,
 			});
-			scroll.reveal(".c-progress-wrap03", { delay: 250 });
-			scroll.reveal(".c-progress-wrap04", { delay: 300 });
-			scroll.reveal(".c-progress-wrap05", { delay: 350 });
-			scroll.reveal(".c-progress-wrap06", { delay: 400 });
+			scroll.reveal(".c-bs", { delay: 250 });
+			scroll.reveal(".c-git", { delay: 300 });
+			scroll.reveal(".c-css", { delay: 350 });
+			scroll.reveal(".c-jinja", { delay: 400 });
+			scroll.reveal(".c-sass", { delay: 400 });
+			scroll.reveal(".c-gulp", { delay: 400 });
+			scroll.reveal(".c-wp", { delay: 400 });
 			scroll.reveal(".navbar, #portfolio");
 
 			// after breakpoint - page resize
@@ -312,7 +315,6 @@ let mainObj;
 		document.querySelector(".active-card").classList.remove("active-card");
 		e.target.closest(".card").classList.add("active-card");
 	}
-
 	document
 		.querySelectorAll(".card")
 		.forEach((card) => card.addEventListener("mouseover", handleMouseover));

@@ -434,59 +434,49 @@ img {
 /***********************************************************************************
  * BORDER EFFECT*
  ***********************************************************************************/
-.border-effect::after {
-  border-top: 0.2em solid #e91906;
-  border-bottom: 0.2em solid #e91906;
-  -moz-transform: scaleX(0);
-  -o-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 0 100%;
-  -ms-transform-origin: 0 100%;
-  transform-origin: 0 100%;
+.border-effect {
+  position: relative;
+  border-radius: 2px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
 }
-.border-effect::before {
-  border-right: 0.2em solid #e91906;
-  border-left: 0.2em solid #e91906;
-  -moz-transform: scaleY(0);
-  -o-transform: scaleY(0);
-  -ms-transform: scaleY(0);
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  -webkit-transform-origin: 100% 0;
-  -ms-transform-origin: 100% 0;
-  transform-origin: 100% 0;
-}
-.border-effect::before, .border-effect::after {
-  position: absolute;
-  display: block;
+.border-effect:before, .border-effect:after {
   content: "";
-  z-index: -1;
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  visibility: hidden;
+  border-radius: 2px;
+}
+.border-effect:before {
+  border-top: 0.2rem solid #bada55;
+  border-right: 0.2rem solid #bada55;
+  transition: width 0.1s ease 0.3s, height 0.1s ease 0.2s, visibility 0s 0.4s;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  margin: -2px;
-  -webkit-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -transition: all 0.5s;
-  transition: all 0.5s;
 }
-.border-effect:hover::before, .border-effect:focus::before, .border-effect:active::before {
-  -moz-transform: scaleY(1);
-  -o-transform: scaleY(1);
-  -ms-transform: scaleY(1);
-  -webkit-transform: scaleY(1);
-  transform: scaleY(1);
+.border-effect:after {
+  border-left: 0.2rem solid #bada55;
+  border-bottom: 0.2rem solid #bada55;
+  bottom: 0;
+  right: 0;
+  transition: width 0.1s ease 0.1s, height 0.1s ease, visibility 0s 0.2s;
 }
-.border-effect:hover::after, .border-effect:focus::after, .border-effect:active::after {
-  -moz-transform: scaleX(1);
-  -o-transform: scaleX(1);
-  -ms-transform: scaleX(1);
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+.border-effect:hover {
+  animation: pulse 1s ease-out 0.4s;
+  color: #000;
+}
+.border-effect:hover:before, .border-effect:hover:after {
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+}
+.border-effect:hover:before {
+  transition: width 0.1s ease, height 0.1s ease 0.1s;
+}
+.border-effect:hover:after {
+  transition: width 0.1s ease 0.2s, height 0.1s ease 0.3s, visibility 0s 0.2s;
 }
 
 /***********************************************************************************
@@ -965,6 +955,7 @@ img {
   padding: 20px;
   overflow: hidden;
   text-align: left;
+  border: 0.1rem solid #bada55;
   cursor: pointer;
 }
 
@@ -980,6 +971,8 @@ img {
 .blob {
   transform: translate(23%, 32%) scale(0.7);
   fill: #bada55;
+  stroke: #181616;
+  stroke-width: 0.4rem;
   transition: 0.4s;
 }
 
@@ -1294,7 +1287,7 @@ textarea.parsley-error {
   margin: 0 auto;
   position: relative;
   list-style: none;
-  background: linear-gradient(110deg, #e91906, #ff6000);
+  background: linear-gradient(110deg, #bada55, #bada44);
 }
 @media only screen and (max-width: 37.5em) {
   .filter__list {
@@ -1392,7 +1385,7 @@ textarea.parsley-error {
   }
 }
 .filter__bttn, .filter__bttn:link, .filter__bttn:visited {
-  padding: 0.75rem 2.4rem;
+  padding: 0.75rem 1.6rem;
   position: absolute;
   top: -45px;
   text-transform: uppercase;
@@ -2725,7 +2718,6 @@ textarea.parsley-error {
   font-weight: 600;
   background-color: #000;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%231d2408' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%233a470f' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23576b17' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23738e1f' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%2390b227' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23acd231' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23bada55' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
   background-size: cover;
 }
 @media only screen and (max-width: 37.5em) {
@@ -2891,18 +2883,10 @@ td {
  ***********************************************************************************/
 .about {
   position: relative;
-  background: url("../img/beach-night-sky2.webp") 0 0;
-  background: url("../img/beach-night-sky2.avif") 0 0;
-  background: url("../img/beach-night-sky2.jpg") 0 0;
-  background-position: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: repeating-linear-gradient(225deg, hsla(64, 83%, 54%, 0.05) 0px, hsla(64, 83%, 54%, 0.05) 1px, transparent 1px, transparent 11px, hsla(64, 83%, 54%, 0.05) 11px, hsla(64, 83%, 54%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(270deg, hsla(64, 83%, 54%, 0.05) 0px, hsla(64, 83%, 54%, 0.05) 1px, transparent 1px, transparent 11px, hsla(64, 83%, 54%, 0.05) 11px, hsla(64, 83%, 54%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(180deg, hsla(64, 83%, 54%, 0.05) 0px, hsla(64, 83%, 54%, 0.05) 1px, transparent 1px, transparent 11px, hsla(64, 83%, 54%, 0.05) 11px, hsla(64, 83%, 54%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(315deg, hsla(64, 83%, 54%, 0.05) 0px, hsla(64, 83%, 54%, 0.05) 1px, transparent 1px, transparent 11px, hsla(64, 83%, 54%, 0.05) 11px, hsla(64, 83%, 54%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(270deg, rgb(186, 218, 85), rgb(24, 22, 22));
   height: auto;
   min-height: 80rem;
   padding: 2rem 4rem;
-  /* 	@include media-breakpoint-down(sm) {
-
-  } */
 }
 .about__favorites {
   padding-bottom: 5rem;

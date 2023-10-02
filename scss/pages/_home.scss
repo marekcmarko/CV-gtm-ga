@@ -98,19 +98,54 @@ td {
  ***********************************************************************************/
 .about {
 	position: relative;
-	background: url("../img/beach-night-sky2.webp") 0 0;
-	background: url("../img/beach-night-sky2.avif") 0 0;
-	background: url("../img/beach-night-sky2.jpg") 0 0;
-	background-position: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: repeating-linear-gradient(
+			225deg,
+			hsla(64, 83%, 54%, 0.05) 0px,
+			hsla(64, 83%, 54%, 0.05) 1px,
+			transparent 1px,
+			transparent 11px,
+			hsla(64, 83%, 54%, 0.05) 11px,
+			hsla(64, 83%, 54%, 0.05) 12px,
+			transparent 12px,
+			transparent 32px
+		),
+		repeating-linear-gradient(
+			270deg,
+			hsla(64, 83%, 54%, 0.05) 0px,
+			hsla(64, 83%, 54%, 0.05) 1px,
+			transparent 1px,
+			transparent 11px,
+			hsla(64, 83%, 54%, 0.05) 11px,
+			hsla(64, 83%, 54%, 0.05) 12px,
+			transparent 12px,
+			transparent 32px
+		),
+		repeating-linear-gradient(
+			180deg,
+			hsla(64, 83%, 54%, 0.05) 0px,
+			hsla(64, 83%, 54%, 0.05) 1px,
+			transparent 1px,
+			transparent 11px,
+			hsla(64, 83%, 54%, 0.05) 11px,
+			hsla(64, 83%, 54%, 0.05) 12px,
+			transparent 12px,
+			transparent 32px
+		),
+		repeating-linear-gradient(
+			315deg,
+			hsla(64, 83%, 54%, 0.05) 0px,
+			hsla(64, 83%, 54%, 0.05) 1px,
+			transparent 1px,
+			transparent 11px,
+			hsla(64, 83%, 54%, 0.05) 11px,
+			hsla(64, 83%, 54%, 0.05) 12px,
+			transparent 12px,
+			transparent 32px
+		),
+		linear-gradient(270deg, rgb(186, 218, 85), rgb(24, 22, 22));
 	height: auto;
 	min-height: 80rem;
 	padding: 2rem 4rem;
-
-	/* 	@include media-breakpoint-down(sm) {
-
-	} */
 
 	&__favorites {
 		padding-bottom: 5rem;
