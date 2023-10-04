@@ -313,9 +313,9 @@ let mainObj;
 	//Add - Remove active card class
 	function handleMouseover(e) {
 		document.querySelector(".active-card").classList.remove("active-card");
-		e.target.closest(".card").classList.add("active-card");
+		e.target.closest(".card-mini").classList.add("active-card");
 	}
 	document
-		.querySelectorAll(".card")
+		.querySelectorAll(".card-mini")
 		.forEach((card) => card.addEventListener("mouseover", handleMouseover));
 })(jQuery);
